@@ -1,0 +1,30 @@
+[
+  {
+    "id": "golomt",
+    "name": "Голомт стандарт",
+    "description": "Брэндийн хөх, шар accent",
+    "light": { "bg": "#f6f5f2", "surface": "#ffffff", "primary": "#005aa9", "accent": "#ebc300", "text": "#13243a", "border": "#e4e1da", "heroFill": "#0b4f93" },
+    "dark": { "bg": "#0b1524", "surface": "#121e30", "primary": "#5b9bdc", "accent": "#cdb94a", "text": "#e6eaf0", "border": "#22324a", "heroFill": "#0c2a4c" }
+  },
+  {
+    "id": "sky",
+    "name": "Мөнх хөх тэнгэр",
+    "description": "Сэрүүн, агаарлаг хөх тон",
+    "light": { "bg": "#f1f5f9", "surface": "#ffffff", "primary": "#1f6fb5", "accent": "#e2b93b", "text": "#102a43", "border": "#dde5ee", "heroFill": "#1c5d99" },
+    "dark": { "bg": "#08172a", "surface": "#0f2239", "primary": "#6aaee8", "accent": "#d3b85a", "text": "#e4edf6", "border": "#1d3552", "heroFill": "#0e3158" }
+  },
+  {
+    "id": "hearth",
+    "name": "Голомтын гал",
+    "description": "Дулаан, зөөлөн шаргал тон",
+    "light": { "bg": "#f8f4ee", "surface": "#fffdf9", "primary": "#1d4f86", "accent": "#d9a520", "text": "#2a2118", "border": "#e8dfd2", "heroFill": "#1b3f6a" },
+    "dark": { "bg": "#15120e", "surface": "#1f1b16", "primary": "#78a6d6", "accent": "#d0a444", "text": "#efe8de", "border": "#352d24", "heroFill": "#1a2c44" }
+  },
+  {
+    "id": "slate",
+    "name": "Саарал албан",
+    "description": "Төвийг сахисан, албан саарал",
+    "light": { "bg": "#f4f4f5", "surface": "#ffffff", "primary": "#2d4a6b", "accent": "#bfa13a", "text": "#18202b", "border": "#e2e3e6", "heroFill": "#2b3f58" },
+    "dark": { "bg": "#111418", "surface": "#191d23", "primary": "#8fa9c8", "accent": "#b8a257", "text": "#e5e7eb", "border": "#2a3039", "heroFill": "#1d2a3a" }
+  }
+]

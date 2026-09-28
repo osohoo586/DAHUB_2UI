@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Motion — short (160–600ms), ease-out, upward ("өөдөө тэмүүлэх").
+   Everything collapses to instant under prefers-reduced-motion (see tokens).
+   ========================================================================== */
+
+/* Scroll reveal (v-reveal directive) */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-distance), 0);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out),
+    transform var(--dur-reveal) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Route transition — a short fade only */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 200ms var(--ease-out);
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+/* Generic fade */
+.fade-enter-active,
+.fade-leave-active { transition: opacity var(--dur-base) var(--ease-out); }
+.fade-enter-from,
+.fade-leave-to { opacity: 0; }
+
+/* Fade + rise for inline swaps (tab panels, filtered lists) */
+.rise-enter-active { transition: opacity 320ms var(--ease-out), transform 320ms var(--ease-out); }
+.rise-leave-active { transition: opacity 160ms var(--ease-out); }
+.rise-enter-from { opacity: 0; transform: translateY(10px); }
+.rise-leave-to { opacity: 0; }
+
+/* List moves (TransitionGroup) */
+.list-move { transition: transform 360ms var(--ease-out); }
+.list-enter-active { transition: opacity 320ms var(--ease-out), transform 320ms var(--ease-out); }
+.list-leave-active { transition: opacity 160ms var(--ease-out); position: absolute; }
+.list-enter-from { opacity: 0; transform: translateY(12px); }
+.list-leave-to { opacity: 0; }
+
+/* Modal */
+.modal-enter-active,
+.modal-leave-active { transition: opacity var(--dur-base) var(--ease-out); }
+.modal-enter-active .modal-panel,
+.modal-leave-active .modal-panel {
+  transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out);
+}
+.modal-enter-from,
+.modal-leave-to { opacity: 0; }
+.modal-enter-from .modal-panel,
+.modal-leave-to .modal-panel { transform: translateY(8px) scale(0.985); opacity: 0; }
+
+/* Drawer (right side) */
+.drawer-enter-active,
+.drawer-leave-active { transition: opacity 280ms var(--ease-out); }
+.drawer-enter-active .drawer-panel,
+.drawer-leave-active .drawer-panel { transition: transform 280ms var(--ease-out); }
+.drawer-enter-from,
+.drawer-leave-to { opacity: 0; }
+.drawer-enter-from .drawer-panel,
+.drawer-leave-to .drawer-panel { transform: translateX(100%); }
+
+/* Dropdown */
+.pop-enter-active,
+.pop-leave-active { transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out); }
+.pop-enter-from,
+.pop-leave-to { opacity: 0; transform: translateY(-4px); }
+
+/* Skeleton shimmer — quiet */
+@keyframes shimmer {
+  0% { background-position: -320px 0; }
+  100% { background-position: 320px 0; }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* "Flame tip" pulse for progress bars */
+@keyframes ember {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

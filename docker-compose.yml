@@ -1,0 +1,9 @@
+services:
+  dahub:
+    build: .
+    image: dahub-ui:latest
+    container_name: dahub-ui
+    ports:
+      # Host port is configurable: DAHUB_PORT=8090 docker compose up
+      - "${DAHUB_PORT:-8090}:80"
+    restart: unless-stopped

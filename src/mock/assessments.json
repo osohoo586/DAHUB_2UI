@@ -1,0 +1,41 @@
+{
+  "operational": {
+    "title": "2026 оны үйл ажиллагааны эрсдэлийн үнэлгээ",
+    "period": "2026 оны III улирал",
+    "leadId": "m03",
+    "dueDate": "2026-10-31",
+    "progress": 64,
+    "stages": [
+      { "key": "plan", "label": "Төлөвлөлт", "status": "done", "date": "2026-07-15" },
+      { "key": "identify", "label": "Эрсдэл тодорхойлох", "status": "done", "date": "2026-08-12" },
+      { "key": "assess", "label": "Үнэлгээ", "status": "active", "date": "2026-09-30" },
+      { "key": "respond", "label": "Хариу арга хэмжээ", "status": "pending", "date": "2026-10-20" },
+      { "key": "report", "label": "Тайлан", "status": "pending", "date": "2026-10-31" }
+    ],
+    "units": 14,
+    "unitsAssessed": 9
+  },
+  "it": {
+    "title": "МТ-ийн үйл ажиллагааны үнэлгээ (COBIT 2019)",
+    "period": "2026 оны III улирал",
+    "leadId": "m15",
+    "dueDate": "2026-11-15",
+    "progress": 52,
+    "stages": [
+      { "key": "plan", "label": "Төлөвлөлт", "status": "done", "date": "2026-07-22" },
+      { "key": "identify", "label": "Эрсдэл тодорхойлох", "status": "done", "date": "2026-08-25" },
+      { "key": "assess", "label": "Үнэлгээ", "status": "active", "date": "2026-10-10" },
+      { "key": "respond", "label": "Хариу арга хэмжээ", "status": "pending", "date": "2026-10-30" },
+      { "key": "report", "label": "Тайлан", "status": "pending", "date": "2026-11-15" }
+    ],
+    "units": 6,
+    "unitsAssessed": 3,
+    "domains": [
+      { "key": "access", "label": "Хандалтын удирдлага", "score": 2.6, "target": 4 },
+      { "key": "change", "label": "Өөрчлөлтийн удирдлага", "score": 3.1, "target": 4 },
+      { "key": "bcp", "label": "Нөөцлөлт / BCP", "score": 2.8, "target": 4 },
+      { "key": "cyber", "label": "Кибер аюулгүй байдал", "score": 3.3, "target": 4 },
+      { "key": "ops", "label": "Үйлдлийн систем, сүлжээ", "score": 3.0, "target": 3.5 }
+    ]
+  }
+}

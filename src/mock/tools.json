@@ -1,0 +1,17 @@
+{
+  "categories": [
+    { "key": "sampling", "label": "Түүвэрлэлт", "tone": "primary" },
+    { "key": "analysis", "label": "Шинжилгээ", "tone": "teal" },
+    { "key": "calculator", "label": "Тооцоолуур", "tone": "violet" }
+  ],
+  "builtin": [
+    { "id": "sampling", "name": "Санамсаргүй түүвэр", "description": "Excel-ээс энгийн ба давхаргат түүвэр.", "category": "sampling", "icon": "shuffle", "route": "/tools/sampling" },
+    { "id": "mus", "name": "Мөнгөн нэгжийн түүвэр (MUS)", "description": "Их дүнтэй гүйлгээг давуу сонгоно.", "category": "sampling", "icon": "coins" },
+    { "id": "attribute", "name": "Шинж чанарын түүвэр", "description": "Хяналтын хазайлтын түвшинг үнэлнэ.", "category": "sampling", "icon": "clipboard" },
+    { "id": "benford", "name": "Бенфордын хуулийн шинжилгээ", "description": "Эхний цифрээр хэвийн бус дүн илрүүлнэ.", "category": "analysis", "icon": "chart" },
+    { "id": "duplicates", "name": "Давхардал илрүүлэх", "description": "Ижил дүн, огноо, харилцагчтай гүйлгээ.", "category": "analysis", "icon": "copy" },
+    { "id": "gaps", "name": "Дугаарлалтын цоорхой (Gap) шинжилгээ", "description": "Баримтын дугаарлалтын тасалдал.", "category": "analysis", "icon": "hash" },
+    { "id": "materiality", "name": "Материаллаг байдлын тооцоолуур", "description": "Нийт ба гүйцэтгэлийн материаллаг байдал.", "category": "calculator", "icon": "gauge" }
+  ],
+  "icons": ["tools", "shuffle", "coins", "clipboard", "chart", "percent", "sigma", "gauge", "copy", "hash", "filter", "search", "spreadsheet", "table", "database", "layers", "target", "activity", "calendar", "scale", "shield-check", "key", "file-text", "book"]
+}

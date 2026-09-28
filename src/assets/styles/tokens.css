@@ -1,0 +1,287 @@
+/* ==========================================================================
+   DAHUB design tokens
+   Brand source: Golomt Bank logo — blue #005AA9 (Мөнх хөх тэнгэр), yellow #FFF100 (гал).
+   Base tokens (7) are editable in the theme customizer; derived tokens are
+   recomputed from them in src/utils/color.js when a user overrides a value.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand primitives (never themed) ---- */
+  --brand-blue: #005aa9;
+  --brand-blue-deep: #0a3f76;
+  --brand-yellow: #fff100;
+
+  /* ---- Typography ---- */
+  --font-display: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --fs-xs: 0.75rem;    /* 12 */
+  --fs-sm: 0.8125rem;  /* 13 */
+  --fs-base: 0.9375rem;/* 15 */
+  --fs-md: 1.0625rem;  /* 17 */
+  --fs-lg: 1.25rem;    /* 20 */
+  --fs-xl: 1.5rem;     /* 24 */
+  --fs-2xl: 1.875rem;  /* 30 */
+  --fs-3xl: 2.375rem;  /* 38 */
+  --fs-4xl: 3rem;      /* 48 */
+
+  --lh-tight: 1.2;
+  --lh-snug: 1.35;
+  --lh-normal: 1.55;
+  --lh-relaxed: 1.75;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  --tracking-eyebrow: 0.08em;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ---- Radius ---- */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ---- Motion ---- */
+  --dur-fast: 160ms;
+  --dur-base: 240ms;
+  --dur-theme: 350ms;
+  --dur-slow: 400ms;
+  --dur-reveal: 520ms;
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --stagger: 70ms;
+  --reveal-distance: 16px;
+
+  /* ---- Layout ---- */
+  --container: 1320px;
+  --gutter: 24px;
+  --page-x: 32px;
+  --nav-h: 68px;
+  --nav-h-condensed: 56px;
+
+  /* ---- Navigation layout (html[data-nav] = top | side | bottom | dropdown) ----
+     Space each layout occupies; pages pad themselves with these so nothing overlaps. */
+  --dur-nav: 300ms;
+  --sidebar-w: 248px;
+  --sidebar-w-collapsed: 76px;
+  --footbar-h: 72px;
+  --nav-top: var(--nav-h);
+  --nav-top-sticky: var(--nav-h-condensed);
+  --nav-left: 0px;
+  --nav-bottom: 0px;
+
+  /* ---- Z layers ---- */
+  --z-nav: 50;
+  --z-dropdown: 60;
+  --z-drawer: 80;
+  --z-modal: 90;
+  --z-toast: 100;
+}
+
+:root[data-nav='side'] {
+  --nav-top: 0px;
+  --nav-top-sticky: 0px;
+  --nav-left: var(--sidebar-w);
+}
+:root[data-nav='side'][data-sidebar='collapsed'] { --nav-left: var(--sidebar-w-collapsed); }
+:root[data-nav='bottom'] {
+  --nav-top: 0px;
+  --nav-top-sticky: 0px;
+  --nav-bottom: calc(var(--footbar-h) + env(safe-area-inset-bottom, 0px));
+}
+
+/* --------------------------------------------------------------------------
+   Light — almost-white warm grey page, white cards, dark navy text
+   -------------------------------------------------------------------------- */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  /* Base (editable) */
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --primary: #005aa9;
+  --accent: #ebc300;
+  --text: #13243a;
+  --border: #e4e1da;
+  --hero-fill: #0b4f93;
+
+  /* Derived */
+  --bg-subtle: #efede8;
+  --surface-2: #faf9f7;
+  --surface-hover: #f7f6f3;
+  --text-2: #475467;
+  --text-3: #667085;
+  --border-strong: #d3cfc6;
+  --primary-hover: #004c90;
+  --primary-soft: #eaf1f8;
+  --primary-soft-2: #d6e4f2;
+  --on-primary: #ffffff;
+  --accent-soft: #fbf3cc;
+  --accent-glow: rgba(235, 195, 0, 0.28);
+  --hero-fill-2: #09437d;
+  --footer-bg: #0a3f76;
+  --on-hero: #ffffff;
+  --on-hero-2: rgba(255, 255, 255, 0.74);
+  --focus-ring: rgba(0, 90, 169, 0.35);
+  --overlay: rgba(12, 22, 38, 0.42);
+  --nav-bg: rgba(246, 245, 242, 0.82);
+
+  /* Semantic (muted, fixed) */
+  --success: #2f7d5b;
+  --success-soft: #e6f2ec;
+  --warning: #9a6512;
+  --warning-soft: #f8efdc;
+  --danger: #b4443c;
+  --danger-soft: #f8e7e5;
+  --info: var(--primary);
+  --info-soft: var(--primary-soft);
+
+  /* Risk levels — validated (dataviz validator, surface #FFFFFF):
+     CVD adjacent ΔE 10.4, normal-vision 15.7; medium < 3:1 → always labelled. */
+  --risk-low: #3e8e63;
+  --risk-medium: #c9a227;
+  --risk-high: #d0643c;
+  --risk-critical: #9b2c3a;
+  --risk-low-soft: #e5f1ea;
+  --risk-medium-soft: #f7f0d9;
+  --risk-high-soft: #f9e6de;
+  --risk-critical-soft: #f4e1e3;
+  --risk-low-ink: #2c6a49;
+  --risk-medium-ink: #7a5f0c;
+  --risk-high-ink: #9a4222;
+  --risk-critical-ink: #8a2533;
+
+  /* Categorical chart palette — validated (surface #FFFFFF):
+     CVD adjacent ΔE 10.8, normal-vision 18.1, all ≥ 3:1 */
+  --chart-1: var(--primary);
+  --chart-2: #b07d08;
+  --chart-3: #2a9d8f;
+  --chart-4: #d0694a;
+  --chart-5: #6d5fb5;
+  --chart-6: #4f8a3a;
+  --chart-neutral: #c9c5bc;
+  --chart-grid: #ece9e3;
+  --chart-axis: #d3cfc6;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(19, 36, 58, 0.05), 0 1px 1px rgba(19, 36, 58, 0.03);
+  --shadow-2: 0 10px 28px -12px rgba(19, 36, 58, 0.18), 0 2px 6px -2px rgba(19, 36, 58, 0.06);
+  --shadow-3: 0 24px 60px -20px rgba(19, 36, 58, 0.28), 0 4px 12px -4px rgba(19, 36, 58, 0.08);
+  --card-highlight: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   Dark — deep navy (not black), lifted cards, soft white text, dimmed yellow
+   -------------------------------------------------------------------------- */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0b1524;
+  --surface: #121e30;
+  --primary: #5b9bdc;
+  --accent: #cdb94a;
+  --text: #e6eaf0;
+  --border: #22324a;
+  --hero-fill: #0c2a4c;
+
+  --bg-subtle: #0e1a2b;
+  --surface-2: #17253a;
+  --surface-hover: #16243a;
+  --text-2: #a9b4c3;
+  --text-3: #8593a6;
+  --border-strong: #2e4260;
+  --primary-hover: #74abe3;
+  --primary-soft: #16304f;
+  --primary-soft-2: #1c3b61;
+  --on-primary: #0b1524;
+  --accent-soft: #2c2a1c;
+  --accent-glow: rgba(205, 185, 74, 0.22);
+  --hero-fill-2: #0a2240;
+  --footer-bg: #081a30;
+  --on-hero: #f2f5f9;
+  --on-hero-2: rgba(242, 245, 249, 0.72);
+  --focus-ring: rgba(91, 155, 220, 0.45);
+  --overlay: rgba(3, 8, 16, 0.62);
+  --nav-bg: rgba(11, 21, 36, 0.8);
+
+  --success: #5fb58a;
+  --success-soft: #15302a;
+  --warning: #d6a64a;
+  --warning-soft: #2f2716;
+  --danger: #e07a70;
+  --danger-soft: #3a1f22;
+
+  /* Risk levels — validated (surface #121E30): CVD adjacent ΔE 10.7, normal-vision 15.2 */
+  --risk-low: #42a07c;
+  --risk-medium: #806504;
+  --risk-high: #c3755c;
+  --risk-critical: #934641;
+  --risk-low-soft: #16302a;
+  --risk-medium-soft: #2b2714;
+  --risk-high-soft: #35231f;
+  --risk-critical-soft: #36191d;
+  --risk-low-ink: #7fcaa6;
+  --risk-medium-ink: #d9bd5c;
+  --risk-high-ink: #eba48c;
+  --risk-critical-ink: #ec9a9a;
+
+  /* Categorical chart palette — validated (surface #121E30):
+     CVD adjacent ΔE 10.4, normal-vision 17.9, all ≥ 3:1 */
+  --chart-1: var(--primary);
+  --chart-2: #b3831a;
+  --chart-3: #2fa596;
+  --chart-4: #cf6b4c;
+  --chart-5: #8c80d9;
+  --chart-6: #6ba356;
+  --chart-neutral: #34465f;
+  --chart-grid: #1d2b40;
+  --chart-axis: #2e4260;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-2: 0 14px 34px -14px rgba(0, 0, 0, 0.6), 0 2px 6px -2px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 28px 70px -24px rgba(0, 0, 0, 0.7), 0 4px 12px -4px rgba(0, 0, 0, 0.4);
+  --card-highlight: rgba(255, 255, 255, 0.025);
+}
+
+@media (max-width: 1279px) {
+  :root { --page-x: 28px; }
+}
+@media (max-width: 1023px) {
+  :root { --page-x: 24px; --gutter: 20px; }
+  /* The sidebar stays icon-only on narrow screens */
+  :root[data-nav='side'] { --nav-left: var(--sidebar-w-collapsed); }
+}
+@media (max-width: 767px) {
+  :root { --page-x: 16px; --gutter: 16px; --nav-h: 60px; --nav-h-condensed: 54px; --sidebar-w-collapsed: 64px; --footbar-h: 64px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-nav: 0ms;
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-theme: 0ms;
+    --dur-slow: 0ms;
+    --dur-reveal: 0ms;
+    --stagger: 0ms;
+    --reveal-distance: 0px;
+  }
+}

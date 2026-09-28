@@ -1,0 +1,46 @@
+{
+  "modules": [
+    { "key": "news", "label": "DAG News", "icon": "news", "actions": ["view", "edit", "delete"] },
+    { "key": "dashboard", "label": "Dashboard", "icon": "dashboard", "actions": ["view"] },
+    { "key": "tools", "label": "Хэрэгсэл", "icon": "tools", "actions": ["view", "edit"] },
+    { "key": "risk", "label": "Эрсдэлийн үнэлгээ", "icon": "risk", "actions": ["view", "edit", "delete"] },
+    { "key": "members", "label": "Гишүүд ба эрх", "icon": "users", "actions": ["view", "edit", "delete"] }
+  ],
+  "roles": [
+    { "key": "executive", "label": "Удирдлага", "description": "Бүх модулийг харна, шийдвэр гаргана" },
+    { "key": "head", "label": "Хэлтсийн дарга", "description": "Хэлтсийн ажил, эрсдэл, гишүүдийг удирдана" },
+    { "key": "auditor", "label": "Аудитор", "description": "Аудитын ажил, хэрэгсэл, эрсдэлийн бүртгэл" },
+    { "key": "admin", "label": "Админ", "description": "Системийн бүх тохиргоо ба эрх" }
+  ],
+  "actionLabels": { "view": "Харах", "edit": "Засах", "delete": "Устгах" },
+  "matrix": {
+    "executive": {
+      "news": { "view": true, "edit": false, "delete": false },
+      "dashboard": { "view": true },
+      "tools": { "view": true, "edit": false },
+      "risk": { "view": true, "edit": false, "delete": false },
+      "members": { "view": true, "edit": false, "delete": false }
+    },
+    "head": {
+      "news": { "view": true, "edit": true, "delete": false },
+      "dashboard": { "view": true },
+      "tools": { "view": true, "edit": true },
+      "risk": { "view": true, "edit": true, "delete": true },
+      "members": { "view": true, "edit": true, "delete": false }
+    },
+    "auditor": {
+      "news": { "view": true, "edit": false, "delete": false },
+      "dashboard": { "view": true },
+      "tools": { "view": true, "edit": true },
+      "risk": { "view": true, "edit": true, "delete": false },
+      "members": { "view": true, "edit": false, "delete": false }
+    },
+    "admin": {
+      "news": { "view": true, "edit": true, "delete": true },
+      "dashboard": { "view": true },
+      "tools": { "view": true, "edit": true },
+      "risk": { "view": true, "edit": true, "delete": true },
+      "members": { "view": true, "edit": true, "delete": true }
+    }
+  }
+}
